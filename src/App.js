@@ -41,7 +41,7 @@ const App = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/github-svgrepo-com.svg"
+                    src={`${process.env.PUBLIC_URL}/github-svgrepo-com.svg`}
                     alt="GitHub spectraVal"
                     className="w-8 h-8 hover:scale-110 transition"
                   />
@@ -52,7 +52,7 @@ const App = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/instagram-1-svgrepo-com.svg"
+                    src={`${process.env.PUBLIC_URL}/instagram-1-svgrepo-com.svg`}
                     alt="Instagram _mrvlana"
                     className="w-8 h-8 hover:scale-110 transition"
                   />
@@ -63,7 +63,7 @@ const App = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/linkedin-linked-in-svgrepo-com.svg"
+                    src={`${process.env.PUBLIC_URL}/linkedin-linked-in-svgrepo-com.svg`}
                     alt="LinkedIn"
                     className="w-8 h-8 hover:scale-110 transition"
                   />
