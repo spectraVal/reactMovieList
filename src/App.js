@@ -23,7 +23,7 @@ const App = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/public/LogoTMDB.svg"
+                  src={`${process.env.PUBLIC_URL}/LogoTMDB.svg`}
                   alt="TMDB Logo"
                   className="h-4 w-auto inline-block align-middle object-contain"
                 />
