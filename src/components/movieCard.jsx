@@ -1,10 +1,29 @@
+import { useState } from "react";
+
 const MovieCard = ({ movie }) => {
+  const [isTap, setIsTap] = useState(false);
+
+  const handleInteraction = () => {
+    if (window.innerWidth <= 768) {
+      setIsTap((prev) => !prev);
+    }
+  };
+
   return (
-    <div className="text-center">
+    <div
+      className="text-center cursor-pointer"
+      onClick={handleInteraction}
+      onMouseEnter={() => window.innerWidth > 768 && setIsTap(true)}
+      onMouseLeave={() => window.innerWidth > 768 && setIsTap(false)}
+    >
       <div className="text-xl m-4 font-semibold w-full truncate max-w-full">
         {movie.title}
       </div>
-      <div className="relative overflow-hidden group rounded-lg">
+      <div
+        className={`relative overflow-hidden group rounded-lg transition-transform duration-300 ${
+          isTap ? "scale-105 shadow-lg" : ""
+        }`}
+      >
         {movie.poster_path ? (
           <img
             src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
@@ -14,7 +33,11 @@ const MovieCard = ({ movie }) => {
         ) : (
           <div className="no-image">No Image</div>
         )}
-        <div className="absolute text-sm inset-0 bg-black/40 text-white p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+        <div
+          className={`absolute text-sm inset-0 bg-black/40 text-white p-4 group-hover:opacity-100 transition duration-300 ${
+            isTap ? "opacity-100" : "opacity-0"
+          }`}
+        >
           {movie.overview || "No overview available."}
         </div>
       </div>

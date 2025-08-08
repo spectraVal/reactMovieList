@@ -2,6 +2,7 @@ import "./App.css";
 import "./style.css";
 import { useState } from "react";
 import MovieList from "./components/MovieList";
+import TitleWithIcons from "./components/TitleWithIcon";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -30,50 +31,13 @@ const App = () => {
               </a>
             </div>
 
-            <div className="relative group">
-              <h1 className="text-center text-xl sm:text-2xl md:text-3xl font-serif font-bold text-white cursor-pointer">
-                Rival Movie
-              </h1>
-              <div className="absolute left-1/2 -translate-x-1/2 mt-2 bg-[#282c34] p-0.5 rounded-md flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <a
-                  href="https://github.com/spectraVal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={`${process.env.PUBLIC_URL}/github-svgrepo-com.svg`}
-                    alt="GitHub spectraVal"
-                    className="w-8 h-8 hover:scale-110 transition"
-                  />
-                </a>
-                <a
-                  href="https://www.instagram.com/_mrvlana/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={`${process.env.PUBLIC_URL}/instagram-1-svgrepo-com.svg`}
-                    alt="Instagram _mrvlana"
-                    className="w-8 h-8 hover:scale-110 transition"
-                  />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rival-maulana-107001377"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={`${process.env.PUBLIC_URL}/linkedin-linked-in-svgrepo-com.svg`}
-                    alt="LinkedIn"
-                    className="w-8 h-8 hover:scale-110 transition"
-                  />
-                </a>
-              </div>
+            <div className="flex justify-center">
+              <TitleWithIcons />
             </div>
 
             <input
               type="text"
-              className="movie-search text-sm sm:text-base md:text-lg p-2 rounded-lg transition duration-150 focus-within:outline-none focus:ring-2 focus:ring-white  w-full max-w-xs sm:max-w-sm"
+              className="movie-search text-sm sm:text-base md:text-lg p-2 rounded-lg transition duration-150 focus-within:outline-none focus:ring-2 focus:ring-white  w-full max-w-xs sm:max-w-sm focus:drop-shadow-[0_0_6px_rgba(0,183,255,0.6)]"
               placeholder="Search Movie..."
               onChange={handleSearch}
             />
